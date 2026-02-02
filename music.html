@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music | Muzik €mpire</title>
+  <meta name="description" content="Listen to the latest music from Muzik Trixx. Streaming, audio previews, and links to purchase on Payhip.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <header class="nav-header">
+    <nav class="nav">
+      <div class="logo">Muzik €mpire</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="bio.html">Bio</a></li>
+        <li><a href="music.html" class="active">Music</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="https://payhip.com/b/Y1Cn4" class="btn-sign" target="_blank" rel="noopener noreferrer">Sign In / Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>  <!-- MUSIC CONTENT -->  <section class="music-section section">
+    <div class="container">
+      <h1>Muzik Trixx Tracks</h1>
+      <p>Listen to the latest tracks and stream your favorites. Click below to purchase or download on Payhip.</p><div class="music-grid">
+    <div class="track-card">
+      <h3>Trixx-Am Blessed</h3>
+      <audio controls src="assets/audio/Trixx-Am-Blessed.mp3"></audio>
+      <a href="https://payhip.com/b/Y1Cn4" class="btn-primary" target="_blank" rel="noopener noreferrer">Buy on Payhip</a>
+    </div>
+
+    <div class="track-card">
+      <h3>Track Title 2</h3>
+      <audio controls src="assets/audio/track2.mp3"></audio>
+      <a href="https://payhip.com/b/Y1Cn4" class="btn-primary" target="_blank" rel="noopener noreferrer">Buy on Payhip</a>
+    </div>
+
+    <!-- Add more tracks here -->
+  </div>
+</div>
+
+  </section>  <!-- FOOTER -->  <footer class="footer">
+    <p>© <span id="year"></span> Muzik €mpire. All Rights Reserved.</p>
+  </footer>  <script src="assets/js/main.js"></script>  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script></body>
+  </html>
