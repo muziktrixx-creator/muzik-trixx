@@ -1,42 +1,126 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Muzik €mpire</title>
-  <meta name="description" content="About Muzik Trixx and the Muzik €mpire movement. Learn the story and mission behind the music.">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muzik €mpire | Muzik Trixx</title>
+  <meta name="description" content="Official landing page for Muzik Trixx – Muzik €mpire. Music, videos, updates and the movement." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Slider CSS */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }.hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.hero-slider .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-slider .slide.active {
+  opacity: 1;
+}
+
+  </style>
 </head>
 <body>
-  <!-- NAVIGATION -->
-  <header class="nav-header">
+  <!-- HEADER / HERO -->
+  <header class="hero">
     <nav class="nav">
       <div class="logo">Muzik €mpire</div>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="bio.html">Bio</a></li>
         <li><a href="music.html">Music</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="news.html">News</a></li>
         <li><a href="https://payhip.com/b/Y1Cn4" class="btn-sign" target="_blank" rel="noopener noreferrer">Sign In / Sign Up</a></li>
       </ul>
-    </nav>
-  </header>  <!-- ABOUT CONTENT -->  <section class="about-section section">
-    <div class="container">
-      <h1>About Muzik Trixx</h1>
-      <p>
-        Muzik Trixx na voice of the streets, bringing raw, real-life stories into music. From hustle to hope, each track dey tell a story wey resonate with the everyday struggle and dreams of millions.
-      </p>
-      <p>
-        Muzik €mpire na more than music — na movement. Na space for fans, creatives, and dreamers to connect, vibe, and elevate together.
-      </p>
-      <p>
-        The mission: create music weh inspire, inform, and empower while pushing the boundaries of creativity and culture.
-      </p>
+    </nav><!-- Slider Images -->
+<div class="hero-slider">
+  <img src="assets/images/IMG-20250425-WA0035.jpg" class="slide active">
+  <img src="assets/images/IMG-20250425-WA0036.jpg" class="slide">
+  <img src="assets/images/IMG-20250425-WA0037.jpg" class="slide">
+  <img src="assets/images/IMG-20250425-WA0039.jpg" class="slide">
+  <img src="assets/images/IMG-20250425-WA0040.jpg" class="slide">
+</div>
+
+<div class="hero-content">
+  <h1>Muzik Trixx</h1>
+  <p>Welcome to the Muzik €mpire — real sound, real struggle, real elevation.</p>
+  <a href="#music" class="btn-primary">Listen Now</a>
+</div>
+
+  </header>  <!-- MUSIC SECTION -->  <section id="music" class="section">
+    <h2>Latest Music</h2>
+    <div class="music-grid">
+      <div class="track-card">
+        <h3>Track Title 1</h3>
+        <audio controls src="assets/audio/track1.mp3"></audio>
+      </div>
+      <div class="track-card">
+        <h3>Track Title 2</h3>
+        <audio controls src="assets/audio/track2.mp3"></audio>
+      </div>
+    </div>
+  </section>  <!-- VIDEOS SECTION -->  <section id="videos" class="section dark">
+    <h2>Videos</h2>
+    <div class="video-grid">
+      <video controls src="assets/video/video1.mp4"></video>
+      <video controls src="assets/video/video2.mp4"></video>
+    </div>
+  </section>  <!-- ABOUT SECTION -->  <section id="about" class="section">
+    <h2>About Muzik Trixx</h2>
+    <p>
+      Muzik Trixx na voice of the streets, blending real-life stories, hustle, pain and hope.
+      Muzik €mpire na more than music — na movement.
+    </p>
+    <a href="about.html" class="btn-primary">Learn More</a>
+  </section>  <!-- CONTACT SECTION -->  <section id="contact" class="section dark">
+    <h2>Connect</h2>
+    <p>Email: muziktrixx@gmail.com</p>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+      <a href="#">Audiomack</a>
     </div>
   </section>  <!-- FOOTER -->  <footer class="footer">
     <p>© <span id="year"></span> Muzik €mpire. All Rights Reserved.</p>
   </footer>  <script src="assets/js/main.js"></script>  <script>
+    // Auto update year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Hero Slider JS
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    let current = 0;
+
+    function nextSlide() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }
+
+    // Change slide every 5 seconds
+    setInterval(nextSlide, 5000);
   </script></body>
-                                                       </html>
+      </html>
